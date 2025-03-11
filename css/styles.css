@@ -121,15 +121,20 @@ h1 {
 
 /* mobile */
 .mobile-menu-items {
-  position: absolute;
+  position: fixed;
   top: 140px;
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-  transition: transform 0.4s ease;
+  transition: all 0.4s ease;
   transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
 }
 
 .mobile-menu-list {
@@ -152,6 +157,9 @@ h1 {
 
 .mobile-menu-items.active {
   transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu {
